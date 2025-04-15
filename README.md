@@ -34,7 +34,7 @@ Em breve: prints ou GIFs mostrando o funcionamento do sistema! 🎬
 
 ## 📦 Como rodar o projeto
 
-1. Clone o repositório:
+'1. Clone o repositório:
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repo.git
@@ -65,11 +65,13 @@ http://127.0.0.1:8000
 
 🔐 Login no painel de admin
 http://127.0.0.1:8000/admin
-utilize o usuário criado no passo 6
+utilize o usuário criado no passo 6'
 
 ---
 
-🛠️ Em desenvolvimento
+
+
+## 🛠️ Em desenvolvimento
  Dashboard com gráficos 📊
 
  Filtros por data e tipo de movimentação 🗓️
@@ -78,13 +80,13 @@ utilize o usuário criado no passo 6
 
  Notificações de estoque mínimo ⚠️
 
-🤝 Contribuição
+## 🤝 Contribuição
 Sinta-se à vontade para enviar pull requests, abrir issues ou sugerir melhorias! 💬
 
-📄 Licença
+## 📄 Licença
 MIT © Bruna Carolina Sementino
 
-💬 Contato
+## 💬 Contato
 📧 bruna.seuemail@email.com
 🐙 github.com/BrunaSementino
 💼 LinkedIn: https://www.linkedin.com/in/brunasementino/
