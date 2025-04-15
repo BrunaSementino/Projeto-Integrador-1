@@ -37,7 +37,7 @@ Em breve: prints ou GIFs mostrando o funcionamento do sistema! 🎬
 '1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone github.com/BrunaSementino/Projeto-Integrador-1
 
 2. Acesse a pasta
 cd nome-do-projeto
