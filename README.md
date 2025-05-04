@@ -87,7 +87,7 @@ Sinta-se à vontade para enviar pull requests, abrir issues ou sugerir melhorias
 MIT © Bruna Carolina Sementino
 
 ## 💬 Contato
-📧 bruna.seuemail@email.com
+📧 dev.brunasementino@gmail.com
 🐙 github.com/BrunaSementino
 💼 LinkedIn: https://www.linkedin.com/in/brunasementino/
 
