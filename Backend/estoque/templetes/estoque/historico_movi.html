@@ -1,0 +1,60 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+<h2>Histórico de Movimentações</h2>
+
+<!-- Filtro -->
+<form method="get" class="mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <select name="filtro" class="form-select" onchange="this.form.submit()">
+                <option value="">Todas</option>
+                <option value="entrada" {% if filtro == 'entrada' %}selected{% endif %}>Entradas</option>
+                <option value="saida" {% if filtro == 'saida' %}selected{% endif %}>Saídas</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+<!-- Tabela -->
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>Produto</th>
+            <th>Tipo</th>
+            <th>Quantidade</th>
+            <th>Data</th>
+            <th>Usuário</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mov in movimentacoes %}
+        <tr>
+            <td>{{ mov.produto.nome }}</td>
+            <td>
+                {% if mov.tipo == 'entrada' %}
+                    <span class="text-success fw-bold">Entrada</span>
+                {% else %}
+                    <span class="text-danger fw-bold">Saída</span>
+                {% endif %}
+            </td>
+            <td>{{ mov.quantidade }}</td>
+            <td>{{ mov.data|date:"d/m/Y H:i" }}</td>
+            <td>{{ mov.usuario.username }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center">Nenhuma movimentação encontrada.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+<a href="{% url 'estoque:gerar_pdf_movimentacoes' %}" class="btn btn-outline-primary mb-3 me-2">
+  📄 Gerar PDF
+</a>
+
+<a href="{% url 'estoque:exportar_excel_movimentacoes' %}" class="btn btn-outline-success mb-3">
+  📊 Exportar Excel
+</a>
