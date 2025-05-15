@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Produtos</title>
+  </head>
+  <body>
+    <h1>📦 Lista de Produtos</h1>
+
+    {% if produtos %}
+    <ul>
+      {% for produto in produtos %}
+      <li>{{ produto.nome }} — Estoque: {{ produto.estoque_fisico }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nenhum produto encontrado.</p>
+    {% endif %}
+  </body>
+</html>
