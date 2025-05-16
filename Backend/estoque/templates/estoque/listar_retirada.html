@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retiradas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <h2 class="text-info">Histórico de Retiradas</h2>
+      <h2>Solicitações de Retirada</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>OS</th>
+            <th>Usuário</th>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in solicitacoes %}
+          <tr>
+            <td>{{ s.codigo_os }}</td>
+            <td>{{ s.usuario.username }}</td>
+            <td>{{ s.produto.nome }}</td>
+            <td>{{ s.quantidade }}</td>
+            <td>{{ s.status }}</td>
+            <td>
+              {% if s.status == 'PENDENTE' %}
+              <a
+                href="{% url 'estoque:aprovar_retirada' s.pk %}"
+                class="btn btn-success btn-sm"
+                >Aprovar</a
+              >
+              <a
+                href="{% url 'estoque:negar_retirada' s.pk %}"
+                class="btn btn-danger btn-sm"
+                >Negar</a
+              >
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <ul class="list-group">
+        {% for retirada in retiradas %}
+        <li class="list-group-item">
+          {{ retirada.solicitante }} retirou {{ retirada.quantidade }} de {{
+          retirada.produto.nome }} em {{ retirada.data }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
